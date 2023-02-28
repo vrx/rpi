@@ -47,6 +47,7 @@ alias black="/usr/bin/fbsetroot -solid black"
 alias rezjack='rezound --audio-method=jack'
 
 # LISP
+export PATH=$PATH:$HOME/.roswell/bin
 alias repl='cl-repl'
 
 # EXPORTS
