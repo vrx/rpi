@@ -4,6 +4,31 @@
 # source /home/pi/rpi-configs/rpi.bash
 
 export HISTIGNORE="pwd:ls:cd"
+shopt -s histappend
+PROMPT_COMMAND="$PROMPT_COMMAND;history -a; history -n"
+# Have lots of history
+HISTSIZE=100000         # remember the last 100000 commands
+HISTFILESIZE=100000     # start truncating commands after 100000 lines
+HISTCONTROL=ignoreboth  # ignoreboth is shorthand for ignorespace and     ignoredups
+
+xset b off
+xset b 0 0 0
+
+alias reboute="sudo reboot -dfi"
+halte() {
+    for device in /media/vrx/*
+    do umount $device;
+    done;
+    sudo shutdown -h now
+}
+
+# install
+alias fs='aptitude search'
+alias fi='sudo aptitude install'
+alias fri='sudo aptitude reinstall'
+alias fu='sudo aptitude update'
+alias fr='sudo aptitude remove'
+
 
 alias cd='cd -P'
 alias clear="clear && printf '\e[3J'" # also clear scrollback !!
@@ -20,6 +45,9 @@ alias sem='sudo emacs -nw  '
 alias kk='sudo kill -9 '
 alias black="/usr/bin/fbsetroot -solid black"
 alias rezjack='rezound --audio-method=jack'
+
+# LISP
+alias repl='cl-repl'
 
 # EXPORTS
 export EDITOR='emacs -nw -rv -q '
