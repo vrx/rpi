@@ -1,5 +1,4 @@
 ;; does not work with sbcl !!
-(in-package :vs/video)
 (cffi:load-foreign-library "libmpv.so")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
